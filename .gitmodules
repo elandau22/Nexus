@@ -1,0 +1,15 @@
+[submodule "Nexus.Core"]
+	path = Nexus.Core
+	url = https://github.com/elandau22/Nexus.Core.git
+[submodule "Nexus.Services"]
+	path = Nexus.Services
+	url = https://github.com/elandau22/Nexus.Services.git
+[submodule "Nexus.Specification"]
+	path = Nexus.Specification
+	url = https://github.com/elandau22/Nexus.Specification.git
+[submodule "Nexus.Admin"]
+	path = Nexus.Admin
+	url = https://github.com/elandau22/Nexus.Admin.git
+[submodule "Nexus.GeneratedCode"]
+	path = Nexus.GeneratedCode
+	url = https://github.com/elandau22/Nexus.GeneratedCode.git

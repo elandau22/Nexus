@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Local settings (don't commit)
+.claude/settings.local.json
