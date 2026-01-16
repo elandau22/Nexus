@@ -72,3 +72,71 @@ Each sub-project has its own CLAUDE.md with specific guidance:
 - Materialize transitive graph edges (derive via paths)
 - Use inverse predicates in archetype edge declarations
 - Skip validation after archetype changes
+
+## Development Methodology
+
+This project follows **Design-First Test-Driven Development**.
+
+### Workflow Phases
+
+```
+📐 DESIGN → 🔴 RED → 🟢 GREEN → 📊 COVERAGE → 🔵 REFACTOR
+     ↑                              │
+     └──────────────────────────────┘
+            (iterate if gaps)
+```
+
+1. **DESIGN** — Specify contracts and component boundaries
+2. **RED** — Write failing tests that define behavior
+3. **GREEN** — Write minimal implementation to pass tests
+4. **COVERAGE** — Analyze gaps and iterate
+5. **REFACTOR** — Improve quality, keep tests green
+
+### Trigger Phrase
+
+Use `/design-first-tdd` or include keywords like "implement", "add feature", "build" to activate the workflow.
+
+### Testing Philosophy
+
+- Tests describe BEHAVIOR, not implementation
+- Given-When-Then format for clarity
+- Unit tests for component contracts
+- Integration tests for collaboration
+- Behavioral tests for acceptance criteria
+
+### Coverage Expectations
+
+| Metric | Target |
+|--------|--------|
+| Line coverage | ≥90% |
+| Branch coverage | ≥85% |
+| Function coverage | ≥95% |
+| Behavioral coverage | 100% |
+
+### Contract Format
+
+Components are defined by:
+- **Inputs** (with validation rules)
+- **Outputs** (success and failure variants)
+- **Behaviors** (MUST/MUST NOT/SHOULD expectations)
+- **Dependencies** (collaborating components)
+
+### Phase Gates
+
+| Phase | Gate |
+|-------|------|
+| DESIGN | User approval required |
+| RED | All tests must fail |
+| GREEN | All tests must pass |
+| COVERAGE | Targets met (or iterate) |
+| REFACTOR | Tests must remain green |
+
+### TDD Agents
+
+| Agent | Phase | Purpose |
+|-------|-------|---------|
+| `spec-designer` | DESIGN | Define contracts and boundaries |
+| `tdd-test-writer` | RED | Write failing behavioral tests |
+| `tdd-implementer` | GREEN | Minimal implementation |
+| `coverage-analyst` | COVERAGE | Analyze gaps, recommend tests |
+| `tdd-refactorer` | REFACTOR | Improve quality safely |
